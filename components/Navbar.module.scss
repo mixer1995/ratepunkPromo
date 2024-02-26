@@ -4,10 +4,11 @@
     background-color: #FFFFFF;
     height: 80px;
     width: 100%;
-    position: fixed;
+    position: sticky;
     display: flex;
     justify-content: center;
     border-bottom: 1px solid #1F343E;
+    z-index: 1;
 
     nav {
         display: flex;

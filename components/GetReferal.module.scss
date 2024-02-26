@@ -1,0 +1,47 @@
+.emailForm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    font-family: "Noto Sans", sans-serif;
+
+    .errMsgLa {
+        font-size: 12px;
+    }
+
+    .customInput {
+        margin-top: 7px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border: 1px solid #1F343E;
+        border-radius: 8px;
+        box-sizing: border-box;
+        padding: 20px;
+        gap: 20px;
+
+        img {
+            height: 20px;
+        }
+
+        input {
+            width: 100%;
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: #6D7A80;
+        }
+    }
+
+    button {
+        margin-top: 16px;
+        background-color: #4EB3E3;
+        border: 1px solid #1F343E;
+        color: #FFFFFF;
+        border-radius: 8px;
+        font-size: 20px;
+        padding: 20px 0;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+}
