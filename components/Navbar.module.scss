@@ -1,0 +1,44 @@
+.header {
+    top: 0;
+    left: 0;
+    background-color: #FFFFFF;
+    height: 80px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 1120px;
+        height: 100%;
+
+        img {
+            height: 32px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            gap: 27px;
+            list-style-type: none;
+
+            li {
+              
+                a {
+                    color: #434A54;
+                    text-decoration: none;
+                    font-family: "Noto Sans", sans-serif;
+                    font-size: 20px;
+                }
+
+                a:hover {
+                    color: #4EB3E3;
+                }
+            }
+        }
+    }
+}
