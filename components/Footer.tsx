@@ -52,10 +52,10 @@ const Footer = () => {
               <span>SOCIAL</span>
               <div>
                 <SocialLink picSrc={instaLogo.src} short="insta" />
-                <SocialLink picSrc={instaLogo.src} short="fb" />
-                <SocialLink picSrc={instaLogo.src} short="linked" />
-                <SocialLink picSrc={instaLogo.src} short="twit" />
-                <SocialLink picSrc={instaLogo.src} short="tick" />
+                <SocialLink picSrc={fbLogo.src} short="fb" />
+                <SocialLink picSrc={linkedLogo.src} short="linked" />
+                <SocialLink picSrc={twitLogo.src} short="twit" />
+                <SocialLink picSrc={tickLogo.src} short="tick" />
               </div>
             </div>
           </div>
