@@ -1,0 +1,32 @@
+.step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 448px;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        width: 256px;
+        gap: 16px;
+
+        span {
+            color: #4EB3E3;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-family: "Caveat Brush", cursive;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 32px;
+            line-height: 48px;
+            color: #1F343E;
+        }
+    }
+}
+
+.step:nth-child(2) {
+    flex-direction: row-reverse;
+}
