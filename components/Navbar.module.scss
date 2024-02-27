@@ -1,3 +1,5 @@
+@import "./../styles/breakpoints.scss";
+
 .header {
     top: 0;
     left: 0;
@@ -6,9 +8,16 @@
     width: 100%;
     position: sticky;
     display: flex;
+    flex-direction: row;
     justify-content: center;
     border-bottom: 1px solid #1F343E;
     z-index: 1;
+
+    @include mobile {
+        height: 56px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 
     nav {
         display: flex;
@@ -18,19 +27,30 @@
         width: 1120px;
         height: 100%;
 
-        img {
+        @include mobile {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 16px;
+            height: 56px;
+        }
+
+        .rateLogo {
             height: 32px;
         }
 
-        ul {
+        .desctopLi {
             display: flex;
             flex-direction: row;
             gap: 27px;
             list-style-type: none;
             padding: 0 16px;
 
+            @include mobile {
+                display: none;
+            }
+
             li {
-              
+
                 a {
                     color: #434A54;
                     text-decoration: none;
@@ -43,5 +63,45 @@
                 }
             }
         }
+
+        .hamburgCloseLogo {
+            display: none;
+            cursor: pointer;
+            height: 16px;
+
+            @include mobile {
+                display: block;
+            }
+        }
+
     }
+    
+    .mobileLi {
+        display: none;
+        flex-direction: column;
+        margin-top: auto;
+        gap: 28px;
+        margin-left: 16px;
+        list-style-type: none;
+        margin-bottom: 21px;
+
+        a {
+            color: #434A54;
+            text-decoration: none;
+            font-family: "Noto Sans", sans-serif;
+            font-size: 16px;
+        }
+
+        a:hover {
+            color: #4EB3E3;
+        }
+    }
+
+    .openedLi {
+        display: flex;
+    }
+}
+
+.opened {
+    height: 234px;
 }
