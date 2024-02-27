@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styles from './GetReferal.module.scss'
 import mailLogo from './../public/email.svg'
 import successLogo from './../public/success.svg'
-import axios from 'axios';
 
 const GetReferal = () => {
     const [emailText, setEmailText] = useState("");
@@ -23,15 +22,31 @@ const GetReferal = () => {
     };
 
     const submitEmail = async (mail: string) => {
-        console.log(mail);
+        const jsonData = {
+            message: mail
+        };
+
+        let req = new XMLHttpRequest();
+
+        req.onreadystatechange = () => {
+            if (req.readyState == XMLHttpRequest.DONE) {
+                setSubmitted(true);
+            } else {
+                setErrorMsg('Failed to save email. Please try again!');
+            }
+        };
+
+        req.open("POST", "https://api.jsonbin.io/v3/b", true);
+        req.setRequestHeader("Content-Type", "application/json");
+        req.setRequestHeader("X-Master-Key", "$2a$10$OeqeLOsdY7J9PAdRC3Cm4e/Kh4G3pT386LPdthLu92MnwVnU4SwJO");
+        req.send(`{"email": "${mail}"}`);
     }
 
     const checkMail = () => {
         if (!emailText) setErrorMsg("Email is required!")
         else if (!validateEmail(emailText)) setErrorMsg('Please enter a valid email!');
         else {
-            //submitEmail(emailText);
-            //     setErrorMsg('Failed to save email. Please try again!');
+            submitEmail(emailText);
             setSubmitted(true);
         };
     }
