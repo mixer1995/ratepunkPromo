@@ -1,3 +1,5 @@
+@import "./../styles/breakpoints.scss";
+
 .footer {
     position: relative;
     font-family: "Noto Sans", sans-serif;
@@ -15,6 +17,10 @@
         align-items: center;
         justify-content: center;
 
+        @include mobile {
+            height: 286px;
+        }
+
         .align {
             width: 1120px;
             display: flex;
@@ -22,10 +28,14 @@
             gap: 16px;
             align-items: center;
 
+            @include mobile {
+                flex-direction: column;
+                width: 100%;
+            }
+
             .stars {
-                margin-left: 16px;
+                padding: 0 16px;
                 font-size: 28px;
-                margin-bottom: 3px;
             }
         }
 
@@ -40,6 +50,11 @@
         align-items: center;
         justify-content: center;
 
+        @include mobile {
+            height: auto;
+            align-items: flex-start;
+        }
+
         .align {
             width: 1120px;
             height: 226px;
@@ -47,6 +62,14 @@
             flex-direction: row;
             justify-content: flex-end;
             gap: 110px;
+
+            @include mobile {
+                width: calc(100% - 64px);
+                height: auto;
+                flex-direction: column;
+                margin: 48px 0;
+                gap: 32px
+            }
 
             div {
                 display: flex;
@@ -58,19 +81,39 @@
                 img {
                     height: 32px;
                 }
+
+                
+
             }
 
             div:first-child {
                 margin-right: auto;
 
+                @include mobile {
+                    gap: 32px;
+                }
+
+                p {
+                    @include mobile {
+                        br {
+                            display: none;
+                        }
+                    }
+                }
+
                 span {
                     color: #6D7A80;
                     margin-top: auto;
                     font-weight: 300;
+                    display: none;
                 }
             }
 
             .qLinks {
+                    @include mobile {
+                        gap: 23px;
+                    }
+
                 span {
                     font-size: 20px;
                     font-weight: 800;
@@ -83,6 +126,11 @@
                     flex-direction:column;
                     gap: 16px;
                     list-style-type: none;
+
+                    
+                    @include mobile {
+                        gap: 15px;
+                    }
 
                     a {
                         text-decoration: none;
@@ -119,6 +167,7 @@
                         text-decoration: none;
                         color: #1F343E;
                     }
+
                 }
                 
                 .social {
@@ -132,9 +181,23 @@
                         flex-direction: row;
                         width: auto;
                         gap: 8px;
+
+                    }
+
+                }
+
+                
+                .hiddenMobileRes {
+                    color: #6D7A80;
+                    margin-top: auto;
+                    font-weight: 300;
+                    display: none;
+                    font-size: 16px;
+
+                    @include mobile {
+                        display: block;
                     }
                 }
-                
             }
         }
     }

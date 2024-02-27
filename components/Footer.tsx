@@ -20,8 +20,7 @@ const Footer = () => {
         <div className={styles.align}>
           <DownloadBtn picSrc={googleLogo.src} link="https://chromewebstore.google.com/detail/ratepunk-hotel-booking-an/gdaioanblcnghddimngklkhgcbomfdck?utm_source=ratepunk" text="chrome web store" />
           <DownloadBtn picSrc={appleLogo.src} link="https://apps.apple.com/app/ratepunk/id1607823726" text="apple app store" />
-          <span className={styles.stars}>{"★".repeat(5)}</span>
-          <span>Chrome Store reviews</span>
+          <span><span className={styles.stars}>{"★".repeat(5)}</span> Chrome Store reviews</span>
 
         </div>
       </div>
@@ -58,6 +57,7 @@ const Footer = () => {
                 <SocialLink picSrc={tickLogo.src} short="tick" />
               </div>
             </div>
+            <span className={styles.hiddenMobileRes}>© 2021 Ratepunk. All Rights Reserved.</span>
           </div>
         </div>
       </div>
